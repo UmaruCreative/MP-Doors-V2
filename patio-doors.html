@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP Doors - Composite Sliding Patio Doors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream-white': '#FAF8F5',
+              'milk-tea-beige': '#F5EBDD',
+              'soft-brown': '#9D8260',
+              'text-dark': '#4A4A4A',
+              'mp-orange': '#f68428',
+              'charcoal': '#2a2a2a',
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Quicksand"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+        color: #4A4A4A;
+        background-color: #FAF8F5;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cormorant Garamond', serif;
+      }
+      .hero-fade {
+        animation: heroFade 3s ease-in-out forwards;
+      }
+      @keyframes heroFade {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm py-4">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <!-- Logo (Links to Home) -->
+        <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
+           <div class="relative w-10 h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 10H50V25H25V85H10V10Z" fill="#f68428" />
+                <path d="M10 50H40V65H10V50Z" fill="#f68428" />
+                <path d="M55 10H90V85H75V25H55V10Z" fill="#757575" />
+              </svg>
+           </div>
+           <div class="text-2xl font-sans tracking-wide leading-none select-none">
+              <span class="font-bold text-mp-orange">MP</span>
+              <span class="font-light text-gray-500 ml-0.5">DOORS</span>
+              <sup class="text-[10px] text-gray-400 ml-0.5 align-top">®</sup>
+           </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#" class="text-mp-orange font-bold transition-colors">Patio Doors</a>
+            <a href="entry-doors.html" class="text-text-dark font-medium hover:text-mp-orange transition-colors">Entry Doors</a>
+            <a href="index.html#resources" class="text-text-dark font-medium hover:text-mp-orange transition-colors">Resources</a>
+            <a 
+              href="https://www.homedepot.com/b/Doors-Windows-Exterior-Doors/MP-Doors/N-5yc1vZc57aZ5ec" 
+              target="_blank"
+              rel="noreferrer"
+              class="bg-mp-orange text-white px-6 py-2.5 rounded-full font-bold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              Where to Buy
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-btn"
+          class="md:hidden text-text-dark p-2"
+          aria-label="Toggle menu"
+        >
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div 
+        id="mobile-menu"
+        class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+      >
+        <div class="p-6 flex flex-col gap-6 items-center">
+            <a href="#" class="text-xl font-medium text-mp-orange mobile-link">Patio Doors</a>
+            <a href="entry-doors.html" class="text-xl font-medium text-text-dark mobile-link">Entry Doors</a>
+            <a href="index.html#resources" class="text-xl font-medium text-text-dark mobile-link">Resources</a>
+            <a 
+              href="https://www.homedepot.com/b/Doors-Windows-Exterior-Doors/MP-Doors/N-5yc1vZc57aZ5ec" 
+              target="_blank"
+              rel="noreferrer"
+              class="bg-mp-orange text-white w-full text-center px-6 py-3 rounded-full font-bold shadow-md mobile-link"
+            >
+              Where to Buy
+            </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 px-6 bg-cream-white overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 hero-fade z-10">
+                <div class="inline-block px-4 py-1 mb-4 border border-mp-orange text-mp-orange text-sm font-bold rounded-full uppercase tracking-wider bg-white">
+                    The MP Difference
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-soft-brown mb-6 leading-tight">
+                    The small composite sill detail most manufacturers skip...
+                </h1>
+                <h2 class="text-2xl font-serif italic text-gray-500 mb-8">
+                    ...and why it stops rot for a decade.
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4">
+                     <a href="#popular-config" class="px-8 py-3 bg-mp-orange text-white rounded-full font-bold shadow-lg hover:bg-orange-600 transition-colors text-center">
+                        View Popular Models
+                     </a>
+                     <a href="#engineering" class="px-8 py-3 border-2 border-soft-brown text-soft-brown rounded-full font-bold hover:bg-soft-brown hover:text-white transition-colors text-center">
+                        See The Tech
+                     </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative z-0">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl hero-fade" style="animation-delay: 0.2s;">
+                    <!-- Unsplash Image: Patio/Kitchen view -->
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1600&q=80" alt="MP Doors Patio Door" class="w-full h-auto object-cover" />
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8 text-white">
+                        <p class="font-bold text-lg">Composite Sliding Patio Door</p>
+                        <p class="text-sm opacity-90">Hydroshield™ Sill Technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problem (Narrative) -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="prose prose-lg mx-auto text-text-dark">
+                <h3 class="text-3xl font-serif font-bold text-soft-brown mb-8 text-center">Why Standard Doors Fail</h3>
+                
+                <div class="bg-cream-white p-8 rounded-xl border-l-4 border-mp-orange mb-10 shadow-sm">
+                    <p class="font-bold text-lg mb-2 text-soft-brown">The Hidden Leak</p>
+                    <p class="italic text-gray-600">
+                        "Does water seep under your patio door after heavy rain? That small, intermittent leak is usually the first sign of a much larger problem: trapped moisture in the bottom rail."
+                    </p>
+                </div>
+
+                <p class="mb-6 leading-relaxed">
+                    Last spring I removed a sill on a coastal job; the timber behind it had rotted while the visible trim looked fine. 
+                    In one coastal replacement we measured 12 mm of bottom-rail distortion after about 4 years of exposure — enough to break seals and raise winter heat loss by roughly 18%.
+                </p>
+
+                <p class="mb-6 leading-relaxed">
+                    Moisture trapped in the sill does the damage quietly. A well-designed composite sill diverts and drains water before it ever reaches the rail — and that small detail is what makes the difference between a door that needs replacing in a few years and one that lasts decades.
+                </p>
+
+                <p class="font-bold text-center text-mp-orange text-xl mt-8">
+                    MP Doors builds that sill into every unit.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineered Features -->
+    <section class="py-20 px-6 bg-milk-tea-beige" id="engineering">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-soft-brown mb-4">Engineered for Long-Term Performance</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Built around water management construction to address the root causes of door failure.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-milk-tea-beige rounded-full flex items-center justify-center text-mp-orange mb-6">
+                        <i data-lucide="droplets" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-soft-brown mb-3">100% Waterproof Composite Frame</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Non-porous composite resists moisture absorption that causes timber rot and vinyl distortion. The bottom rail—the usual failure point—keeps its shape through repeated wet–dry cycles.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300 ring-2 ring-mp-orange/20">
+                    <div class="w-14 h-14 bg-mp-orange rounded-full flex items-center justify-center text-white mb-6">
+                        <i data-lucide="shield" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-soft-brown mb-3">Hydroshield Protection System</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Small but decisive: integrated drainage channels, a composite sill that won’t soak up water, multi-layer weatherstripping and sealed construction. These features stop water from lodging in the frame.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-milk-tea-beige rounded-full flex items-center justify-center text-mp-orange mb-6">
+                        <i data-lucide="move-horizontal" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-soft-brown mb-3">Smooth-Glide Stainless Rollers</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Sealed ball-bearing rollers support 200+ lb insulated glass panels and are rated for 50,000+ cycles. Adjustable for long-term alignment; cheaper plastic rollers often wear out quickly.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-milk-tea-beige rounded-full flex items-center justify-center text-mp-orange mb-6">
+                        <i data-lucide="thermometer-sun" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-soft-brown mb-3">Low-E Glass with Argon Fill</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Dual-pane Low-E glazing with argon reduces heat transfer by roughly 40% compared with standard single glazing — a tangible saving on large patio openings.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-milk-tea-beige rounded-full flex items-center justify-center text-mp-orange mb-6">
+                        <i data-lucide="hammer" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-soft-brown mb-3">Factory-Assembled System</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Each door is assembled and tested in a controlled factory environment. Typical replacement install: 4–6 hours for pre-hung vs 8–12 hours for field-built systems.
+                    </p>
+                </div>
+
+                <!-- Feature 6: Summary -->
+                 <div class="bg-soft-brown p-8 rounded-xl shadow-lg hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center items-center text-center">
+                    <h3 class="text-2xl font-bold font-serif text-white mb-3">Lifetime Limited Warranty</h3>
+                    <p class="text-sm text-gray-100 leading-relaxed mb-6">
+                        We back our composite frames and sills for as long as you own your home.
+                    </p>
+                    <a href="index.html#resources" class="inline-block px-6 py-2 bg-white text-soft-brown rounded-full font-bold hover:bg-cream-white transition-colors">
+                        View Warranty Info
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Prevented -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-serif font-bold text-soft-brown text-center mb-12">Problems This Design Prevents</h2>
+            
+            <div class="space-y-6">
+                <!-- Item 1 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 border border-milk-tea-beige rounded-lg hover:shadow-md transition-shadow">
+                    <div class="md:w-1/3">
+                        <h4 class="font-bold text-red-800 flex items-center gap-2">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                            Door becomes harder to slide
+                        </h4>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 text-sm">Not just dirt — frame distortion from trapped moisture or thermal movement causes friction. A drained sill and stable composite frame keep operation smooth.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 border border-milk-tea-beige rounded-lg hover:shadow-md transition-shadow">
+                    <div class="md:w-1/3">
+                        <h4 class="font-bold text-red-800 flex items-center gap-2">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                            Water pooling or leaks
+                        </h4>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 text-sm">Porous frames and missing drainage let water in. The Hydroshield sill detail diverts driven rain and pooled water before it reaches the structure.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 border border-milk-tea-beige rounded-lg hover:shadow-md transition-shadow">
+                    <div class="md:w-1/3">
+                        <h4 class="font-bold text-red-800 flex items-center gap-2">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                            Spiking energy bills
+                        </h4>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 text-sm">Air infiltration and poor glass performance cause loss. Tight composite framing plus Low-E argon glazing reduces transmission and leakage.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 border border-milk-tea-beige rounded-lg hover:shadow-md transition-shadow">
+                    <div class="md:w-1/3">
+                        <h4 class="font-bold text-red-800 flex items-center gap-2">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                            Repeated replacements
+                        </h4>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 text-sm">If your previous door failed from a moist sill or saturated rail, replacing like for like will repeat the problem. MP Doors addresses the root cause.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Configuration (Spotlight) -->
+    <section class="py-20 px-6 bg-charcoal text-white" id="popular-config">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-serif text-center mb-16">Most Popular Configuration</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12 bg-white/5 rounded-2xl p-8 border border-white/10 shadow-2xl">
+                <!-- Image Side -->
+                <div class="lg:w-1/2 relative min-h-[400px]">
+                    <!-- Unsplash Image: Patio door detail -->
+                    <img 
+                        src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=800&q=80" 
+                        alt="72 inch Patio Door" 
+                        class="absolute inset-0 w-full h-full object-cover rounded-xl"
+                    />
+                    <div class="absolute top-4 left-4 bg-mp-orange text-white px-4 py-1 rounded-full text-sm font-bold">
+                        Best Seller
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="lg:w-1/2 flex flex-col justify-center">
+                    <h3 class="text-3xl font-serif font-bold mb-2">72 in × 80 in Composite Sliding Patio Door</h3>
+                    <p class="text-gray-400 mb-8 italic">The gold standard for residential replacement.</p>
+
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-mp-orange w-6 h-6 shrink-0"></i>
+                            <span>Full composite frame with Hydroshield sill protection</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-mp-orange w-6 h-6 shrink-0"></i>
+                            <span>Low-E glass with argon gas fill</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-mp-orange w-6 h-6 shrink-0"></i>
+                            <span>Stainless steel roller system</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-mp-orange w-6 h-6 shrink-0"></i>
+                            <span>Left- or right-hand configurations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="text-mp-orange w-6 h-6 shrink-0"></i>
+                            <span>Optional built-in blinds between glass</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-black/30 p-6 rounded-lg mb-8 text-sm">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-gray-400 text-xs uppercase tracking-wider">Ideal For</p>
+                                <p class="font-medium">Humid & coastal climates, direct weather exposure</p>
+                            </div>
+                             <div>
+                                <p class="text-gray-400 text-xs uppercase tracking-wider">Available Sizes</p>
+                                <p class="font-medium">60", 72" (most common), 96"</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-xs uppercase tracking-wider">Finishes</p>
+                                <p class="font-medium">Smooth white, Woodgrain interior</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-xs uppercase tracking-wider">Glass Options</p>
+                                <p class="font-medium">Clear Low-E, Blinds, Grilles</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a 
+                        href="https://www.homedepot.com/b/Doors-Windows-Exterior-Doors/MP-Doors/N-5yc1vZc57aZ5ec" 
+                        target="_blank"
+                        class="w-full bg-mp-orange hover:bg-orange-600 text-white font-bold py-4 rounded-xl text-center transition-all duration-300 shadow-lg hover:shadow-mp-orange/50 flex justify-center items-center gap-2"
+                    >
+                        Shop This Model at The Home Depot <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                 <a href="https://www.homedepot.com/b/Doors-Windows-Exterior-Doors/MP-Doors/N-5yc1vZc57aZ5ec" target="_blank" class="text-gray-400 hover:text-white underline transition-colors">
+                     View all patio door models →
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Reused) -->
+    <footer class="bg-charcoal text-white pt-20 pb-10 px-6 border-t border-gray-700">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-16 border-b border-gray-700 pb-12">
+          <!-- Logo & Tagline -->
+          <div class="text-center md:text-left">
+            <h2 class="text-3xl font-serif font-bold mb-2 tracking-widest">MP DOORS</h2>
+            <p class="text-gray-400">Engineering doors for American homes since 1999</p>
+          </div>
+
+          <!-- Trust Blocks -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full md:w-auto">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              <i data-lucide="award" class="text-mp-orange mb-3 w-8 h-8"></i>
+              <h4 class="font-bold mb-1">25+ Years Experience</h4>
+              <p class="text-sm text-gray-400">Trusted by homeowners and contractors nationwide</p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              <i data-lucide="shield-check" class="text-mp-orange mb-3 w-8 h-8"></i>
+              <h4 class="font-bold mb-1">Certified for Coastal</h4>
+              <p class="text-sm text-gray-400">FL# FL-29714, PG50. Impact-rated & Code compliant.</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              <i data-lucide="map-pin" class="text-mp-orange mb-3 w-8 h-8"></i>
+              <h4 class="font-bold mb-1">Exclusive at The Home Depot</h4>
+              <button class="text-mp-orange text-sm font-bold hover:underline mt-1">Find Store →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center text-sm text-gray-500">
+          <p>&copy; 2025 MP Doors. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+       lucide.createIcons();
+
+       // --- Navbar Logic (Reused) ---
+       const navbar = document.getElementById('navbar');
+       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+       const mobileMenu = document.getElementById('mobile-menu');
+       const mobileLinks = document.querySelectorAll('.mobile-link');
+       let isMobileMenuOpen = false;
+
+       window.addEventListener('scroll', () => {
+          if (window.scrollY > 20 || isMobileMenuOpen) {
+            navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'py-4');
+          } else {
+            navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+            navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'py-4');
+          }
+       });
+
+       mobileMenuBtn.addEventListener('click', () => {
+          isMobileMenuOpen = !isMobileMenuOpen;
+          if (isMobileMenuOpen) {
+              mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-7 h-7"></i>';
+          } else {
+              mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+          }
+          lucide.createIcons();
+
+          if (isMobileMenuOpen) {
+            mobileMenu.classList.remove('max-h-0', 'opacity-0');
+            mobileMenu.classList.add('max-h-96', 'opacity-100');
+            navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'py-4');
+          } else {
+            mobileMenu.classList.add('max-h-0', 'opacity-0');
+            mobileMenu.classList.remove('max-h-96', 'opacity-100');
+            if(window.scrollY <= 20) {
+                 navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+                 navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'py-4');
+            }
+          }
+       });
+    </script>
+  </body>
+</html>
